@@ -1,0 +1,188 @@
+module sender (Ready, Transmit, Reset, Clock, DataOut, Address, ReadEnable, saida, Ack, Req);
+
+output reg ReadEnable, Ready, Req;
+input Transmit, Reset, Clock, Ack;
+
+//Variaveis auxiliares
+reg		 CountFlag;
+reg [3:0] CountAddress;
+
+//Endereços de memoria
+output reg [3:0] Address;
+
+//Saida do Sender
+output reg [15:0] saida;
+
+//Data out da Memoria para o sender
+output reg [15:0] DataOut;
+
+// Registrador de estados
+reg [2:0] Estado;
+
+// Estados
+parameter	StateReset 			= 0,
+				MemoriaCheia 		= 1,
+				EnviaDado 			= 2,
+				StateReady			= 3,
+				StateReadyCount	= 4;
+		
+				
+// Estado inicial
+initial begin
+	Estado <= StateReset; 
+end
+
+
+// Decodificador de proximo estado
+
+always @(posedge Clock, posedge Reset)
+	begin
+		if(Reset == 1)
+			Estado <= StateReset;
+		else begin
+			case(Estado)
+			
+				StateReset: 
+					begin
+					
+						//colocar as variaveis auxiliares como 0
+					
+						if(Transmit == 1 && Reset == 0) 
+							Estado <= MemoriaCheia;
+						else
+							Estado <= StateReset;
+						
+					end
+					
+				MemoriaCheia: 
+					begin
+					
+						//ativa readEnable
+						//atribui Countator para address
+						//passa o estado (porque só no proximo pulso
+						//a saida vai ter o valor do dado em dataOut)
+						
+						if(Reset == 1)
+							Estado <= StateReset;
+						else if(CountAddress == 0 && CountFlag == 1'b1)
+							Estado <= StateReady;
+						else if(Ack == 0)
+							Estado <= EnviaDado;
+						else Estado <= MemoriaCheia;
+						
+					end
+					
+				EnviaDado: 
+					begin
+					
+						//Atribui DataOut para a saida
+						//soma um em CountAdrees
+						//se CountAddress == 15 atribui 1 para CountFlag
+					
+						if(Reset == 1)
+							Estado <= StateReset;
+						
+						else if(Ack == 1)
+							Estado <= MemoriaCheia;
+					
+						else Estado <= EnviaDado;
+						
+					end
+					
+				StateReady: 
+					begin
+					
+						//Sinal de ready será 1
+						
+						if(Reset == 1)
+							Estado <= StateReset;
+						
+						else 
+							Estado <= StateReadyCount;
+						
+					end
+					
+				StateReadyCount: 
+					begin
+					
+						Estado <= StateReset;
+						
+					end
+					
+			endcase
+		end
+
+	end
+
+
+
+// Decodificador de Saida
+
+always @(Estado)
+	begin
+			
+			case(Estado)
+			
+				StateReset: 
+					begin
+					
+						//colocar as variaveis auxiliares como 0
+						//e as saidas também como 0
+					
+						ReadEnable 		= 0;
+						Ready 			= 0;
+						CountFlag 		= 0;
+						CountAddress 	= 0; 
+						
+					end
+					
+				MemoriaCheia: 
+					begin
+					
+						//ativa readEnable
+						//atribui Countator para address
+						//passa o estado (porque só no proximo pulso
+						//a saida vai ter o valor do dado em dataOut)
+						
+						Req = 0;
+						ReadEnable 	= 1;
+						Address = CountAddress;
+						
+					end
+					
+				EnviaDado: 
+					begin
+					
+						//Atribui DataOut para a saida
+						//soma um em CountAdrees
+						//se CountAddress == 15 atribui 1 para CountFlag
+						Req = 1; 
+						ReadEnable 	= 0;
+						saida = DataOut;
+						CountAddress = CountAddress + 1'b1;
+						
+						if(CountAddress == 15) 
+							CountFlag = 1;
+					
+					end
+					
+				StateReady: 
+					begin
+					
+						//Sinal de ready será 1
+						
+						Ready = 1;
+						
+					end
+					
+				StateReadyCount: 
+					begin
+					
+						Ready = 1;
+						
+					end
+					
+			endcase
+	end
+		
+endmodule

@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Clock'
+Slack : -0.897
+TNS   : -0.897
+
+Type  : Slow 1200mV 85C Model Setup 'Estado.GravaDado'
+Slack : -0.300
+TNS   : -0.300
+
+Type  : Slow 1200mV 85C Model Hold 'Estado.GravaDado'
+Slack : 0.079
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Clock'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Estado.GravaDado'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Clock'
+Slack : -0.704
+TNS   : -0.704
+
+Type  : Slow 1200mV 0C Model Setup 'Estado.GravaDado'
+Slack : -0.259
+TNS   : -0.259
+
+Type  : Slow 1200mV 0C Model Hold 'Estado.GravaDado'
+Slack : 0.061
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Clock'
+Slack : 0.310
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Estado.GravaDado'
+Slack : 0.408
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Clock'
+Slack : -0.405
+TNS   : -0.405
+
+Type  : Fast 1200mV 0C Model Setup 'Estado.GravaDado'
+Slack : 0.081
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Estado.GravaDado'
+Slack : 0.068
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Clock'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock'
+Slack : -3.000
+TNS   : -6.153
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Estado.GravaDado'
+Slack : 0.414
+TNS   : 0.000
+
+------------------------------------------------------------

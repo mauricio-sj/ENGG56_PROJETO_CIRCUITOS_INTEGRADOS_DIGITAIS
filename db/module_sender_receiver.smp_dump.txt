@@ -1,0 +1,8 @@
+
+State Machine - |receiver|Estado
+Name Estado.StateReady Estado.GravaDado Estado.RecebeDados Estado.StateReset Estado.StateReadyCount 
+Estado.StateReset 0 0 0 0 0 
+Estado.RecebeDados 0 0 1 1 0 
+Estado.GravaDado 0 1 0 1 0 
+Estado.StateReady 1 0 0 1 0 
+Estado.StateReadyCount 0 0 0 1 1 

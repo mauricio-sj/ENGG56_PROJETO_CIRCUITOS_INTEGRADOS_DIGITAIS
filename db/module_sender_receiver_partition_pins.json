@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DataIn[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[15]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteEnable",
+					"strict" : false
+				},
+				{
+					"name" : "Ack",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Req",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
